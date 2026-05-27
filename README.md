@@ -29,9 +29,8 @@ KidPaint Project/
 │   ├── bin/                # Compiled client .class files
 │   └── src/
 │       ├── KidPaint.java   # Entry point — launches the UI
-│       ├── UI.java         # Main Swing GUI (paint panel, chat, tools, networking)
-│       ├── ColorPicker.java# Colour-picker dialog (reads color-spectrum.jpg)
-│       └── PaintMode.java  # Enum: Pixel | Area
+│       ├── UI.java         # Main Swing GUI (paint panel, chat, tools, networking); defines the PaintMode enum (Pixel | Area)
+│       └── ColorPicker.java# Colour-picker dialog (reads color-spectrum.jpg)
 └── Server/                 # Server application
     ├── bin/                # Compiled server .class file
     └── src/
@@ -98,10 +97,10 @@ javac -d bin src/Server.java
 
 ```bash
 cd "KidPaint Project/KidPaint"
-javac -d bin src/PaintMode.java src/ColorPicker.java src/UI.java src/KidPaint.java
+javac -d bin src/ColorPicker.java src/UI.java src/KidPaint.java
 ```
 
-> **Note:** `UI.java` contains the `PaintMode` enum inline as well, so compiling all source files together avoids any ordering issues.
+> **Note:** The `PaintMode` enum is defined inside `UI.java`, so there is no separate `PaintMode.java` to compile.
 
 ---
 
